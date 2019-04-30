@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+		{%include '/includes/_messages.html'%}
+	<br>
+	<h4>RSP CryptoSystem</h4>
+	<hr>
+	<div class="row">
+		<div class="col-6">
+			<div class="div-content">
+				{% from "includes/_formhelpers.html" import render_field %}
+				<form action="" method="POST">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1"></label>
+
+				    {{render_field(form.cle , class_="form-control" )}}
+				    <small id="emailHelp" class="form-text text-muted">key used to encryptage.</small>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1"></label>
+				    {{render_field(form.x , class_="form-control" )}}
+				    <small id="emailHelp" class="form-text text-muted">Text to encrypt.</small>
+
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1"></label>
+				    {{render_field(form.nbRonds , class_="form-control" )}}
+				    <small id="emailHelp" class="form-text text-muted">Clé de cryptage.</small>
+				  </div>
+
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="container main-container">
+				<div class="jumbotron">
+				  <h4 class="">RSP CRYPTOSYSTEM :</h4>
+				  <p class="lead">SPN is a private key cryptosystem. It is a block cipher and will consist of a number of rounds or stages. In a SPN, plaintexts and ciphertexts are both represented by binary vectors of certain length. The two components of a SPN are πs and πp.</p>
+				  <hr class="my-4">
+				  <p>Cle : Clé utilisé pour le cryptage | Text : Text a crypté | Nbrond :Nombre des ronds</p>
+				</div>
+				
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

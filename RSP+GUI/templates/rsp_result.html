@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+		
+	
+	<h1>Result</h1>
+	<hr>
+	{%include '/includes/_messages.html'%}
+	<div class="container">
+		<span> encryption result :</span>
+		{{result}}
+		<br>
+		  <ul class="list-group">
+		    {% for key in keys %}
+		      <li class="list-group-item">{{key}}</li>
+		    {% endfor %}
+		  </ul>
+	</div>
+	
+</div>
+
+
+{% endblock %}
